@@ -1,2 +1,1 @@
-*.mov filter=lfs diff=lfs merge=lfs -text
 ready-html/create-3d-scroll-site/ready-html/media/*.mov filter=lfs diff=lfs merge=lfs -text
