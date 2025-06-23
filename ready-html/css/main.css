@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--color-header: #f4efec;
+	--color-text: #cdc6c3;
+	--gallery-gap: calc(var(--index) * 7.5)
+}
+@font-face {
+	font-family: raleway-c;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: outfit-c;
+	src: url(../fonts/outfit-regular.woff2);
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: outfit-c;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* will-change */
+.content, .hero, .main-header, .gallery > * {
+	will-change: transform;
+}
+
+body {
+	scroll-behavior: smooth;
+	background-color: #121111;
+	color: #fafafa;
+	font-family: raleway-c;
+	overflow-x: hidden;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	transition: backdrop-filter 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+.header.scrolled {
+  backdrop-filter: blur(10px); /* размытие */
+  background-color: rgba(24, 24, 24, 0.5); /* полупрозрачный фон */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* граница снизу */
+}
+
+.header-container {
+	display: flex;
+	align-items: baseline;
+	padding: 20px 180px;
+	height: 100px;
+}
+
+.header-list {
+	margin-left: auto;
+}
+
+.header-list-ul {
+	display: flex;
+	gap: 64px;
+	list-style: none;
+}
+
+.header-list-element {
+	color: #fff;
+	text-decoration: none;
+	transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.header-list-element:hover {
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+	             0 0 20px rgba(255, 255, 255, 0.5);
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.heading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.heading-young {
+	font-family: RalewayThin, sans-serif;
+	font-size: 40px;
+}
+
+.heading-apple {
+	margin-top: 100px;
+}
+
+.hero {
+	width: calc(var(--index) * 36);
+	position: absolute;
+	left: 37vw;
+	top: 22vh;
+	z-index: -1;
+}
+.main-header {
+	height: 100vh;
+}
+.container {
+	padding: 0 7vw;
+}
+.main-title {
+	font-size: calc(var(--index) * 8);
+	position: absolute;
+	width: min-content;
+	left: 8vh;
+	bottom: 12vh;
+	line-height: .9;
+	color: white;
+	z-index: 1;
+}
+.main-title::before {
+	content: 'Steve Jobs';
+	position: absolute;
+	inset: 0;
+	color: white;
+	filter: blur(90px);
+	opacity: 0.4;
+	z-index: -1;
+}
+.gallery {
+	display: flex;
+	padding: calc(var(--index) * 8) 0;
+}
+
+.gallery2 {
+	padding: calc(var(--index) * 0) 0;
+}
+
+.gallery3 {
+	padding: calc(var(--index) * 0) 0;
+}
+
+.gallery > * {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.gallery__item {
+	max-width: calc(var(--index) * 21);
+	margin-bottom: var(--gallery-gap);
+	max-height: 180vh;
+	border-radius: 8px;
+}
+.gallery__left {
+	margin-top: calc(var(--gallery-gap) * 1.75);
+}
+.gallery__right .gallery__item {
+	margin: 0;
+	margin-top: var(--gallery-gap);
+}
+.text-block {
+	color: var(--color-text);
+	position: relative;
+}
+.text-block__h {
+	font-size: 2rem;
+	line-height: 2.4rem;
+	color: var(--color-header);
+	margin-bottom: 1.5rem;
+}
+.text-block__p {
+	line-height: 1.75;
+}
